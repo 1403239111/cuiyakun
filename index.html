@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>崔亚坤 · 个人主页</title>
+<meta name="description" content="崔亚坤，护理专业毕业生，具备临床护理与体检护理经验，并负责医疗体检服务类投标文件编制，累计参与投标项目 20 余个。">
+<style>
+  :root {
+    --bg: #f6f8f7;
+    --surface: #ffffff;
+    --text: #15211d;
+    --muted: #5f6b66;
+    --line: #e3e9e6;
+    --accent: #14614e;
+    --accent-deep: #0d4a3b;
+    --accent-soft: #eaf3f0;
+    --radius: 18px;
+    --maxw: 1120px;
+    --shadow-sm: 0 1px 2px rgba(21, 33, 29, 0.04);
+    --shadow-md: 0 10px 30px -12px rgba(21, 33, 29, 0.12);
+    --shadow-lg: 0 24px 48px -20px rgba(21, 33, 29, 0.16);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- 导航（固定 + 毛玻璃） ---------- */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(246, 248, 247, 0.72);
+    backdrop-filter: saturate(180%) blur(18px);
+    -webkit-backdrop-filter: saturate(180%) blur(18px);
+    border-bottom: 1px solid rgba(227, 233, 230, 0.8);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .logo {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color .25s ease, background-color .25s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent-deep);
+    background: var(--accent-soft);
+  }
+
+  /* ---------- 首屏 ---------- */
+  .hero {
+    padding: 176px 0 120px;
+    text-align: center;
+    background:
+      radial-gradient(600px 300px at 50% -60px, rgba(20, 97, 78, 0.08), transparent 70%);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-deep);
+    border: 1px solid rgba(20, 97, 78, 0.18);
+    background: var(--accent-soft);
+    padding: 7px 16px;
+    border-radius: 999px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(20, 97, 78, 0.15);
+  }
+
+  .hero h1 {
+    margin: 28px 0 18px;
+    font-size: clamp(40px, 8vw, 64px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    font-weight: 750;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+    background: linear-gradient(100deg, var(--accent), #1f8a6d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero p {
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 16.5px;
+    color: var(--muted);
+  }
+
+  .hero-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-size: 14.5px;
+    font-weight: 550;
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 10px 24px -8px rgba(20, 97, 78, 0.45);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -8px rgba(20, 97, 78, 0.5);
+  }
+
+  .btn-ghost {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--text);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn-ghost:hover {
+    border-color: rgba(20, 97, 78, 0.35);
+    color: var(--accent-deep);
+    transform: translateY(-2px);
+  }
+
+  /* ---------- 区块通用 ---------- */
+  .section {
+    padding: 88px 0;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-head h2 {
+    font-size: clamp(26px, 4.5vw, 34px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  .section-head h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin-top: 12px;
+    border-radius: 2px;
+    background: var(--accent);
+  }
+
+  .section-head .hint {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* 关于我 */
+  .about-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .about-card p { color: var(--muted); font-size: 15px; }
+  .about-card p + p { margin-top: 14px; }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .fact {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px 26px;
+    box-shadow: var(--shadow-sm);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .fact:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .fact .k {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #8a968f;
+    margin-bottom: 8px;
+  }
+
+  .fact .v {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+
+  .tag {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-deep);
+    background: var(--accent-soft);
+    border: 1px solid rgba(20, 97, 78, 0.14);
+    padding: 6px 14px;
+    border-radius: 999px;
+    transition: background-color .2s ease, border-color .2s ease;
+  }
+
+  .tag:hover {
+    background: #dcebe6;
+    border-color: rgba(20, 97, 78, 0.28);
+  }
+
+  /* ---------- 经历卡片 ---------- */
+  .works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px 28px 28px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform .3s cubic-bezier(.22,.61,.36,1), box-shadow .3s ease, border-color .3s ease;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), #2ea184);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(20, 97, 78, 0.2);
+  }
+
+  .card:hover::before { transform: scaleX(1); }
+
+  .card-num {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .card-date {
+    font-size: 12.5px;
+    color: #8a968f;
+    margin-bottom: 18px;
+  }
+
+  .card h3 {
+    font-size: 19px;
+    font-weight: 650;
+    margin-bottom: 12px;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: var(--muted);
+    flex: 1;
+  }
+
+  .card-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    margin-top: 24px;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    cursor: pointer;
+    transition: color .25s ease;
+  }
+
+  .card-toggle:hover { color: var(--accent-deep); }
+
+  .card-toggle .arrow {
+    display: inline-block;
+    transition: transform .3s ease;
+  }
+
+  .card.open .card-toggle .arrow { transform: rotate(180deg); }
+
+  /* 展开区域 */
+  .card-more {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .45s cubic-bezier(.22,.61,.36,1), opacity .35s ease;
+  }
+
+  .card.open .card-more {
+    max-height: 480px;
+    opacity: 1;
+  }
+
+  .card-more ul {
+    list-style: none;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--line);
+  }
+
+  .card-more li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .card-more li + li { margin-top: 8px; }
+
+  .card-more li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+    background: var(--accent);
+    opacity: 0.55;
+  }
+
+  /* ---------- 底部 ---------- */
+  .footer {
+    border-top: 1px solid var(--line);
+    background: var(--surface);
+    padding: 72px 0 44px;
+  }
+
+  .footer-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .footer h2 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .footer .sub {
+    font-size: 14.5px;
+    color: var(--muted);
+    max-width: 400px;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 250px;
+  }
+
+  .contacts a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14.5px;
+    color: var(--muted);
+    padding: 10px 14px;
+    border-radius: 12px;
+    transition: background-color .2s ease, color .2s ease;
+  }
+
+  .contacts a:hover {
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+  }
+
+  .contacts .k {
+    width: 62px;
+    flex: none;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #8a968f;
+  }
+
+  .copy {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+    color: #8a968f;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* 进场动画 */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
+  }
+
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width: 900px) {
+    .works { grid-template-columns: 1fr 1fr; }
+    .facts { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 760px) {
+    .wrap { padding: 0 20px; }
+
+    .nav-inner { height: auto; padding: 12px 0; flex-direction: column; gap: 8px; }
+    .nav-links { gap: 2px; }
+    .nav-links a { padding: 8px 12px; font-size: 13.5px; }
+
+    html { scroll-padding-top: 100px; }
+
+    .hero { padding: 148px 0 72px; }
+    .hero p { font-size: 15.5px; }
+    .section { padding: 56px 0; }
+    .section-head { margin-bottom: 28px; flex-direction: column; align-items: flex-start; gap: 6px; }
+
+    .works { grid-template-columns: 1fr; }
+    .facts { grid-template-columns: 1fr; }
+
+    .about-card { padding: 26px; }
+    .card { padding: 26px 24px 22px; }
+
+    .footer { padding: 56px 0 36px; }
+    .footer-top { flex-direction: column; gap: 32px; }
+    .contacts { width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .card, .btn, .fact, .card-toggle, .card-toggle .arrow, .card-more { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="logo">崔<span>亚坤</span></div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">首页</a></li>
+          <li><a href="#about">关于我</a></li>
+          <li><a href="#works">经历</a></li>
+          <li><a href="#contact">联系</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="eyebrow"><span class="dot"></span>求职中 · 临床研究协调（CRC）方向</div>
+        <h1>你好，我是<br><em>崔亚坤</em></h1>
+        <p>护理专业毕业生，具备扎实的医学理论与规范的临床实操，熟悉医院诊疗流程；兼任医疗体检服务类投标文件编制，累计参与投标项目 20 余个。</p>
+        <div class="hero-actions">
+          <a class="btn btn-ghost" href="#about">关于我</a>
+          <a class="btn btn-primary" href="#works">查看我的经历</a>
+          <a class="btn btn-ghost" href="#contact">联系我</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>关于我</h2>
+          <span class="hint">护理 × 行政协作</span>
+        </div>
+
+        <div class="facts reveal">
+          <div class="fact">
+            <div class="k">教育背景</div>
+            <div class="v">忻州职业技术学院 · 护理学</div>
+          </div>
+          <div class="fact">
+            <div class="k">最高学历</div>
+            <div class="v">大专 · 2024 年 7 月毕业</div>
+          </div>
+          <div class="fact">
+            <div class="k">职业证书</div>
+            <div class="v">护士资格证 · 养老护理员三级</div>
+          </div>
+        </div>
+
+        <div class="about-card reveal">
+          <p>2024 年 7 月毕业于忻州职业技术学院护理学专业，主修基础医学、临床护理、护理伦理等课程。毕业后先后在店上烧伤医院从事烧伤患者日常护理，现在晋城市中医医院负责体检护理工作，同时兼任医疗体检服务类投标文件的制作与管理。</p>
+          <p>工作中能在高压环境下保持沉着，恪守职业伦理与合规要求；责任心强、注重细节，具备规范的文件整理、归档与流程跟进能力。擅长与患者建立信任关系，健康宣教与沟通能力良好，也能在多学科团队中承担好衔接的角色。</p>
+          <p>已完成中医经穴刮痧疗法培训，掌握经络穴位知识与刮痧操作手法。对《药物临床试验质量管理规范》（GCP）有基本了解，希望在临床研究协调（CRC）方向踏实积累、长期成长。</p>
+          <div class="tags">
+            <span class="tag">临床护理</span>
+            <span class="tag">静脉采血</span>
+            <span class="tag">心电图操作</span>
+            <span class="tag">健康宣教</span>
+            <span class="tag">标书编制</span>
+            <span class="tag">中医刮痧</span>
+            <span class="tag">GCP 基础</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="works">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>工作与项目经历</h2>
+          <span class="hint">2024 年至今</span>
+        </div>
+
+        <div class="works">
+          <article class="card reveal open">
+            <div class="card-num">01 / 临床护理</div>
+            <div class="card-date">2024.09 — 2024.12 · 店上烧伤医院</div>
+            <h3>烧伤患者日常护理与治疗支持</h3>
+            <p>负责烧伤患者的伤口处理、敷料更换与生命体征监测，协助医生执行治疗方案；同时为患者及家属提供心理支持与健康教育，帮助其顺利适应治疗过程。</p>
+            <div class="card-more">
+              <ul>
+                <li>精心护理烧伤患者，包括伤口处理、更换敷料、监测生命体征</li>
+                <li>协助医生进行烧伤治疗方案的执行，确保患者恢复进程顺利</li>
+                <li>提供心理支持和健康教育，帮助患者及家属适应治疗过程</li>
+              </ul>
+            </div>
+            <button class="card-toggle" type="button" aria-expanded="true">
+              <span class="toggle-text">收起详情</span><span class="arrow">↓</span>
+            </button>
+          </article>
+
+          <article class="card reveal open">
+            <div class="card-num">02 / 体检护理</div>
+            <div class="card-date">2024.12 — 至今 · 晋城市中医医院</div>
+            <h3>体检流程护理与健康宣教</h3>
+            <p>负责日常体检护理工作，包括静脉采血、生命体征测量、心电图操作、健康宣教及体检报告解读，保障体检流程高效顺畅。</p>
+            <div class="card-more">
+              <ul>
+                <li>独立完成静脉采血、生命体征测量、心电图操作等体检项目</li>
+                <li>开展健康宣教，并为受检者解读体检报告中的关键指标</li>
+                <li>协调体检各环节衔接，确保体检流程高效顺畅</li>
+              </ul>
+            </div>
+            <button class="card-toggle" type="button" aria-expanded="true">
+              <span class="toggle-text">收起详情</span><span class="arrow">↓</span>
+            </button>
+          </article>
+
+          <article class="card reveal open">
+            <div class="card-num">03 / 医疗招投标</div>
+            <div class="card-date">兼职 · 晋城市中医医院</div>
+            <h3>医疗体检服务类投标文件编制</h3>
+            <p>独立完成标书全流程：招标文件解读、资质材料准备、技术方案撰写、商务报价整合与排版打印封装；负责合规性审核，累计参与投标项目 20 余个，支持机构业务拓展。</p>
+            <div class="card-more">
+              <ul>
+                <li>解读招标文件，准备资质材料，撰写技术方案并整合商务报价</li>
+                <li>负责标书排版、打印、封装全流程，独立完成标书编制</li>
+                <li>负责投标文件的合规性审核，确保响应招标要求无偏离</li>
+                <li>累计参与投标项目 20 余个，有效支持机构业务拓展</li>
+              </ul>
+            </div>
+            <button class="card-toggle" type="button" aria-expanded="true">
+              <span class="toggle-text">收起详情</span><span class="arrow">↓</span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <h2>期待一个合适的机会</h2>
+          <p class="sub">希望在临床研究协调（CRC）方向长期发展。如有岗位机会或合作意向，欢迎随时联系，我会尽快回复。</p>
+        </div>
+        <div class="contacts">
+          <a href="mailto:1465690636@qq.com"><span class="k">邮箱</span>1465690636@qq.com</a>
+          <a href="tel:15234642188"><span class="k">电话</span>152 3464 2188</a>
+          <a href="#contact"><span class="k">现居</span>山西 · 晋城高平</a>
+          <a href="#contact"><span class="k">求职</span>临床研究协调（CRC）</a>
+        </div>
+      </div>
+      <div class="copy">
+        <span>© 2026 崔亚坤. 保留所有权利.</span>
+        <span>Built with care.</span>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  // 经历卡片展开 / 收起
+  document.querySelectorAll('.card-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.card');
+      const open = card.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.querySelector('.toggle-text').textContent = open ? '收起详情' : '展开详情';
+    });
+  });
+
+  const items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach((el, i) => {
+      el.style.transitionDelay = (i % 3) * 0.08 + 's';
+      io.observe(el);
+    });
+  } else {
+    items.forEach((el) => el.classList.add('in'));
+  }
+</script>
+</body>
+</html>
